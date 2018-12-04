@@ -1,14 +1,17 @@
 <div class="home-container">
   <div class="wrapper">
     <div class="logo">
-      <i class="pi pi-key"></i>
+      <!-- <i class="pi pi-key"></i> -->
     </div>
     <div class="user-input-wrapper">
       <div class="user-input">
-        <label>Name:</label>
-        <input type="text" pInputText />
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Favorite food" value="Sushi">
+          </mat-form-field>
+        </form>
       </div>
-      <button pButton type="button" label="Try It!"></button>
+      <!-- <button pButton type="button" label="Try It!"></button> -->
       <div class="allow-use-container">
         *by selecting "Try It!", you consent to have the data used for research purposes only
       </div>

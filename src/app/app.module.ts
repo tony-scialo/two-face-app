@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { CheckboxModule } from 'primeng/checkbox';
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -16,9 +18,9 @@ import { CheckboxModule } from 'primeng/checkbox';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    InputTextModule,
-    ButtonModule,
-    CheckboxModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
