@@ -4,7 +4,7 @@
     Select the cooresponding image
   </div>
   <div class="images-wrapper">
-    <div class="select-image" *ngFor="let img of selectImgList">
+    <div class="select-image" *ngFor="let img of selectImgList" (click)="onImageClick(img)">
       <img src="{{path + img}}" alt="face to select image">
     </div>
   </div>

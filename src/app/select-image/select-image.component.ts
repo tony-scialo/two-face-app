@@ -25,4 +25,8 @@ export class SelectImageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.selectImgListSub.unsubscribe();
   }
+
+  onImageClick(filename: string) {
+    console.log(filename);
+  }
 }
