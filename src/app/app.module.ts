@@ -4,6 +4,7 @@ import { RootStoreModule } from './root-store/root-store.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -18,6 +19,7 @@ import {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     RootStoreModule,
     MatFormFieldModule,
     MatInputModule,
