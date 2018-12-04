@@ -9,6 +9,7 @@ import { RootStoreState, HomeSelectors } from '../root-store';
   styleUrls: ['./show-image.component.scss']
 })
 export class ShowImageComponent implements OnInit {
+  path = '../../assets/images/';
   filenameList = FILENAMES;
   randomImg: string;
 
