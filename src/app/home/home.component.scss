@@ -10,10 +10,22 @@
   .wrapper {
     width: 400px;
 
-    .logo {
-      font-size: 150px;
+    .user-input-wrapper {
+      .user-input {
+        .mat-form-field {
+          width: 100%;
+        }
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .allow-use-container {
+      font-size: 14px;
       text-align: center;
-      color: #fff;
+      margin-top: 12px;
     }
   }
 }
