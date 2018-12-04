@@ -13,9 +13,10 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { ShowImageComponent } from './show-image/show-image.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ShowImageComponent],
+  declarations: [AppComponent, HomeComponent, ShowImageComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
