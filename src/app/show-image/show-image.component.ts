@@ -1,6 +1,6 @@
-import { FILENAMES } from '../shared/data/image-names';
+import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RootStoreState, HomeSelectors, HomeActions } from '../root-store';
 
 @Component({
@@ -8,21 +8,32 @@ import { RootStoreState, HomeSelectors, HomeActions } from '../root-store';
   templateUrl: './show-image.component.html',
   styleUrls: ['./show-image.component.scss']
 })
-export class ShowImageComponent implements OnInit {
+export class ShowImageComponent implements OnInit, OnDestroy {
   path = '../../assets/images/';
   randomImg: string;
   timerLength = 1000;
 
+  randomImgSub: Subscription;
+  timerLengthSub: Subscription;
+
   constructor(private store$: Store<RootStoreState.State>) {}
 
   ngOnInit() {
-    // this.randomImg = this.getRandomImage();
     this.store$.dispatch(new HomeActions.SelectRandomImage());
-    this.store$
+    this.randomImgSub = this.store$
       .select(HomeSelectors.selectRandomImage)
       .subscribe(img => (this.randomImg = img));
 
+    this.timerLengthSub = this.store$
+      .select(HomeSelectors.selectTimerLength)
+      .subscribe(tl => (this.timerLength = tl));
+
     this.runTimer();
+  }
+
+  ngOnDestroy() {
+    this.randomImgSub.unsubscribe();
+    this.timerLengthSub.unsubscribe();
   }
 
   runTimer() {

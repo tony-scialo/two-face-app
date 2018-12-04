@@ -4,10 +4,12 @@ export interface State {
   userName: string;
   randomImg: string;
   filenames: FaceImage[];
+  timerLength: number;
 }
 
 export const initialState = {
   userName: '',
   randomImg: '',
-  filenames: FILENAMES
+  filenames: FILENAMES,
+  timerLength: 2000
 };
