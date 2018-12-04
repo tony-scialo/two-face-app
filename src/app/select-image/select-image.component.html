@@ -1,6 +1,8 @@
 <app-header></app-header>
 <div class="select-image-container">
-  <div *ngFor="let img of selectImgList">
-    <img src="{{path + img}}" alt="face to select image">
+  <div class="images-wrapper">
+    <div class="select-image" *ngFor="let img of selectImgList">
+      <img src="{{path + img}}" alt="face to select image">
+    </div>
   </div>
 </div>
