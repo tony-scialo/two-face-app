@@ -3,5 +3,5 @@ export interface State {
 }
 
 export const initialState = {
-  userName: ''
+  userName: 'Tony'
 };
