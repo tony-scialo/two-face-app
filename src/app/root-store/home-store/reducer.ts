@@ -45,8 +45,8 @@ function generateRandomSelects(state: State): State {
     randomImg = getRandomImage(state.filenames);
     list.push(randomImg);
   }
-
-  console.log(list);
-
-  return state;
+  return {
+    ...state,
+    selectImgList: list
+  };
 }

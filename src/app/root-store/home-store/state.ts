@@ -6,6 +6,7 @@ export interface State {
   filenames: FaceImage[];
   timerLength: number;
   numSelectImg: number;
+  selectImgList: string[];
 }
 
 export const initialState = {
@@ -13,5 +14,6 @@ export const initialState = {
   randomImg: '',
   filenames: FILENAMES,
   timerLength: 2000,
-  numSelectImg: 9
+  numSelectImg: 9,
+  selectImgList: []
 };

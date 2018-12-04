@@ -9,6 +9,7 @@ const getUserName = (state: State): string => state.userName;
 const getRandomImg = (state: State): string => state.randomImg;
 const getTimerLength = (state: State): number => state.timerLength;
 const getNumSelectImg = (state: State): number => state.numSelectImg;
+const getSelectImgList = (state: State): string[] => state.selectImgList;
 
 export const selectHomeState: MemoizedSelector<
   object,
@@ -42,4 +43,12 @@ export const selectNumSelectImg: MemoizedSelector<
 > = createSelector(
   selectHomeState,
   getNumSelectImg
+);
+
+export const selectSelectImgList: MemoizedSelector<
+  object,
+  string[]
+> = createSelector(
+  selectHomeState,
+  getSelectImgList
 );
