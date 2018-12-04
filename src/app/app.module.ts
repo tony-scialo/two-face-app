@@ -14,9 +14,10 @@ import {
 } from '@angular/material';
 import { ShowImageComponent } from './show-image/show-image.component';
 import { HeaderComponent } from './header/header.component';
+import { SelectImageComponent } from './select-image/select-image.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ShowImageComponent, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, ShowImageComponent, HeaderComponent, SelectImageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

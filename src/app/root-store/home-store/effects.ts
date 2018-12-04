@@ -15,4 +15,12 @@ export class HomeEffects {
       this.router.navigate(['showImage']);
     })
   );
+
+  @Effect({ dispatch: false })
+  navToSelectImage = this.actions$.pipe(
+    ofType(HomeActionTypes.USER_TIMER_END),
+    tap(() => {
+      this.router.navigate(['selectImage']);
+    })
+  );
 }
