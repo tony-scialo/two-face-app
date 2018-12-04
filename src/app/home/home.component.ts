@@ -25,6 +25,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onTryIt() {
-    this.store$.dispatch(new HomeActions.TryItClick());
+    this.store$.dispatch(new HomeActions.TryItClick(this.userName));
   }
 }

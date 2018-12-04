@@ -6,6 +6,7 @@ export enum HomeActionTypes {
 
 export class TryItClick implements Action {
   readonly type = HomeActionTypes.TRY_IT_CLICK;
+  constructor(public payload: string) {}
 }
 
 export type HomeActions = TryItClick;
