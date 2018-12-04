@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { RootStoreState, HomeSelectors } from '../root-store';
+import { RootStoreState, HomeSelectors, HomeActions } from '../root-store';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -22,5 +22,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.userNameSub.unsubscribe();
+  }
+
+  onTryIt() {
+    this.store$.dispatch(new HomeActions.TryItClick());
   }
 }
