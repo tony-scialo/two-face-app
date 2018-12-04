@@ -1,7 +1,13 @@
+import { FaceImage } from './../../shared/model/face-image.model';
+import { FILENAMES } from './../../shared/data/image-names';
 export interface State {
   userName: string;
+  randomImg: string;
+  filenames: FaceImage[];
 }
 
 export const initialState = {
-  userName: ''
+  userName: '',
+  randomImg: '',
+  filenames: FILENAMES
 };

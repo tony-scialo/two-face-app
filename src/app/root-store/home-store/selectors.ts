@@ -6,6 +6,7 @@ import {
 } from '@ngrx/store';
 
 const getUserName = (state: State): string => state.userName;
+const getRandomImg = (state: State): string => state.randomImg;
 
 export const selectHomeState: MemoizedSelector<
   object,
@@ -15,4 +16,12 @@ export const selectHomeState: MemoizedSelector<
 export const selectUserName: MemoizedSelector<object, string> = createSelector(
   selectHomeState,
   getUserName
+);
+
+export const selectRandomImage: MemoizedSelector<
+  object,
+  string
+> = createSelector(
+  selectHomeState,
+  getRandomImg
 );
