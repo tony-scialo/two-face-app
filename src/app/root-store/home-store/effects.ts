@@ -12,8 +12,7 @@ export class HomeEffects {
   navToResults = this.actions$.pipe(
     ofType(HomeActionTypes.TRY_IT_CLICK),
     tap(() => {
-      console.log('here');
-      // this.router.navigate(['lookup/results']);
+      this.router.navigate(['showImage']);
     })
   );
 }

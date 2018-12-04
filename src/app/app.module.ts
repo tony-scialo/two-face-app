@@ -12,9 +12,10 @@ import {
   MatInputModule,
   MatButtonModule
 } from '@angular/material';
+import { ShowImageComponent } from './show-image/show-image.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, ShowImageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
