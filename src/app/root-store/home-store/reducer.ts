@@ -11,6 +11,8 @@ export function featureReducer(state = initialState, action: HomeActions) {
       };
     case HomeActionTypes.SELECT_RANDOM_IMAGE:
       return selectRandomImage(state);
+    case HomeActionTypes.GENERATE_RANDOM_SELECTS:
+      return generateRandomSelects(state);
     default:
       return state;
   }
@@ -33,4 +35,18 @@ function generateRandomNumInRange(min, max): number {
 function getRandomImage(filenameList: FaceImage[]): string {
   const t = generateRandomNumInRange(0, filenameList.length - 1);
   return filenameList[t].filename;
+}
+
+function generateRandomSelects(state: State): State {
+  const list = [];
+
+  let randomImg;
+  for (let x = 0; x < state.numSelectImg - 1; x++) {
+    randomImg = getRandomImage(state.filenames);
+    list.push(randomImg);
+  }
+
+  console.log(list);
+
+  return state;
 }

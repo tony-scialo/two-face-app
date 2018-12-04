@@ -5,11 +5,13 @@ export interface State {
   randomImg: string;
   filenames: FaceImage[];
   timerLength: number;
+  numSelectImg: number;
 }
 
 export const initialState = {
   userName: '',
   randomImg: '',
   filenames: FILENAMES,
-  timerLength: 2000
+  timerLength: 2000,
+  numSelectImg: 9
 };
