@@ -10,6 +10,16 @@
   .wrapper {
     width: 400px;
 
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      img {
+        height: 244px;
+      }
+    }
+
     .user-input-wrapper {
       .user-input {
         .mat-form-field {
