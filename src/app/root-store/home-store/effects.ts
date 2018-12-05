@@ -34,7 +34,7 @@ export class HomeEffects {
 
   @Effect({ dispatch: false })
   showResults = this.actions$.pipe(
-    ofType(HomeActionTypes.GO_BACK_TO_SELECT_IMAGE),
+    ofType(HomeActionTypes.GO_TO_SHOW_RESULTS),
     tap(() => {
       this.router.navigate(['showResults']);
     })

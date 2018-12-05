@@ -13,6 +13,7 @@ const getSelectImgList = (state: State): string[] => state.selectImgList;
 const getNumAttempts = (state: State): number => state.numAttemps;
 const getTotalNumAllowedAttempts = (state: State): number =>
   state.totalNumAllowedAttempts;
+const getNumCorrect = (state: State): number => state.numCorrect;
 
 export const selectHomeState: MemoizedSelector<
   object,
@@ -70,4 +71,12 @@ export const selectTotalNumAllowedAttempts: MemoizedSelector<
 > = createSelector(
   selectHomeState,
   getTotalNumAllowedAttempts
+);
+
+export const selectNumCorrect: MemoizedSelector<
+  object,
+  number
+> = createSelector(
+  selectHomeState,
+  getNumCorrect
 );

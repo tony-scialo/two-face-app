@@ -19,7 +19,7 @@ export const initialState = {
   timerLength: 2000,
   numSelectImg: 9,
   selectImgList: [],
-  totalNumAllowedAttempts: 5,
+  totalNumAllowedAttempts: 2,
   numAttemps: 0,
   numCorrect: 0
 };

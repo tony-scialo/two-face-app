@@ -48,7 +48,7 @@ export class SelectImageComponent implements OnInit, OnDestroy {
     if (this.numAttempts !== this.totalNumAllowedAttempts) {
       this.store$.dispatch(new HomeActions.GoBackToSelectImage());
     } else {
-      console.log('tresty');
+      this.store$.dispatch(new HomeActions.GoToShowResults());
     }
   }
 }
