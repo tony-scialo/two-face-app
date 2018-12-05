@@ -18,6 +18,8 @@ import { HeaderComponent } from './header/header.component';
 import { SelectImageComponent } from './select-image/select-image.component';
 import { ShowResultsComponent } from './show-results/show-results.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { ShowResultsComponent } from './show-results/show-results.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    environment.imports
+    environment.imports,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
