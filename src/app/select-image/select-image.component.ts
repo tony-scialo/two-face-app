@@ -32,7 +32,7 @@ export class SelectImageComponent implements OnInit, OnDestroy {
       .subscribe(na => (this.numAttempts = na));
 
     this.totalNumAllowedAttemptsSub = this.store$
-      .select(HomeSelectors.selectNumAttempts)
+      .select(HomeSelectors.selectTotalNumAllowedAttempts)
       .subscribe(tna => (this.totalNumAllowedAttempts = tna));
   }
 
@@ -45,7 +45,7 @@ export class SelectImageComponent implements OnInit, OnDestroy {
   onImageClick(filename: string) {
     this.store$.dispatch(new HomeActions.UserImageSelection(filename));
 
-    if (this.numAttempts + 1 !== this.totalNumAllowedAttempts) {
+    if (this.numAttempts !== this.totalNumAllowedAttempts) {
       this.store$.dispatch(new HomeActions.GoBackToSelectImage());
     } else {
       console.log('tresty');

@@ -28,7 +28,6 @@ export class HomeEffects {
   backToSelectImg = this.actions$.pipe(
     ofType(HomeActionTypes.GO_BACK_TO_SELECT_IMAGE),
     tap(() => {
-      console.log('here');
       this.router.navigate(['showImage']);
     })
   );
