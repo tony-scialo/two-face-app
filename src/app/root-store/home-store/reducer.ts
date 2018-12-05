@@ -45,6 +45,10 @@ function generateRandomSelects(state: State): State {
     randomImg = getRandomImage(state.filenames);
     list.push(randomImg);
   }
+
+  const randomInsert = generateRandomNumInRange(0, list.length);
+  list.splice(randomInsert, 0, state.randomImg);
+
   return {
     ...state,
     selectImgList: list
