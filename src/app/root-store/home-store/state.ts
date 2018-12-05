@@ -11,6 +11,8 @@ export interface State {
   numAttemps: number;
   numCorrect: number;
   totalTimeTaken: number;
+  totalTimeForCorrect: number;
+  totalTimeForWrong: number;
 }
 
 export const initialState = {
@@ -23,5 +25,7 @@ export const initialState = {
   totalNumAllowedAttempts: 2,
   numAttemps: 0,
   numCorrect: 0,
-  totalTimeTaken: 0
+  totalTimeTaken: 0,
+  totalTimeForCorrect: 0,
+  totalTimeForWrong: 0
 };

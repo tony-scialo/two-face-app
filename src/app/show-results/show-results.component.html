@@ -9,7 +9,15 @@
         {{ numCorrect/numAllowedAttempts | percent: '0.1-1' }} Correct
       </div>
       <div class="average-time-wrapper">
-        {{ (totalTimeTaken / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per attempt
+        <div class="time">
+          {{ (totalTimeTaken / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per attempt
+        </div>
+        <div class="time">
+          {{ (totalTimeCorrect / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per correct attempt
+        </div>
+        <div class="time">
+          {{ (totalTimeWrong / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per wrong attempt
+        </div>
       </div>
     </div>
   </div>

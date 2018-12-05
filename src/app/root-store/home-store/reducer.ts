@@ -63,14 +63,21 @@ function userImageSelection(
   userImageSelect: UserImageSelect
 ): State {
   let numCorrect = state.numCorrect;
+  let totalTimeForCorrect = state.totalTimeForCorrect;
+  let totalTimeForWrong = state.totalTimeForWrong;
   if (userImageSelect.filename === state.randomImg) {
     numCorrect++;
+    totalTimeForCorrect += userImageSelect.userStartTime;
+  } else {
+    totalTimeForWrong += userImageSelect.userStartTime;
   }
 
   return {
     ...state,
     numCorrect: numCorrect,
     numAttemps: ++state.numAttemps,
-    totalTimeTaken: state.totalTimeTaken + userImageSelect.userStartTime
+    totalTimeTaken: state.totalTimeTaken + userImageSelect.userStartTime,
+    totalTimeForCorrect: totalTimeForCorrect,
+    totalTimeForWrong: totalTimeForWrong
   };
 }

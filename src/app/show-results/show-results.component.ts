@@ -18,7 +18,11 @@ export class ShowResultsComponent implements OnInit, OnDestroy {
   totalTimeTaken: number;
   totalTimeTakenSub: Subscription;
 
-  avgTimePerGuess = 2.45;
+  totalTimeCorrect: number;
+  totalTimeCorrectSub: Subscription;
+
+  totalTimeWrong: number;
+  totalTimeWrongSub: Subscription;
 
   constructor(private store$: Store<RootStoreState.State>) {}
 
@@ -34,11 +38,21 @@ export class ShowResultsComponent implements OnInit, OnDestroy {
     this.totalTimeTakenSub = this.store$
       .select(HomeSelectors.selectTotalTimeTaken)
       .subscribe(ttt => (this.totalTimeTaken = ttt));
+
+    this.totalTimeCorrectSub = this.store$
+      .select(HomeSelectors.selectTotalTimeCorrect)
+      .subscribe(ttc => (this.totalTimeCorrect = ttc));
+
+    this.totalTimeWrongSub = this.store$
+      .select(HomeSelectors.selectTotalTimeWrong)
+      .subscribe(ttw => (this.totalTimeWrong = ttw));
   }
 
   ngOnDestroy() {
     this.numCorrectSub.unsubscribe();
     this.numAllowedAttemptsSub.unsubscribe();
     this.totalTimeTakenSub.unsubscribe();
+    this.totalTimeCorrectSub.unsubscribe();
+    this.totalTimeWrongSub.unsubscribe();
   }
 }

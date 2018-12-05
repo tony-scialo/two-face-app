@@ -15,6 +15,8 @@ const getTotalNumAllowedAttempts = (state: State): number =>
   state.totalNumAllowedAttempts;
 const getNumCorrect = (state: State): number => state.numCorrect;
 const getTotalTimeTaken = (state: State): number => state.totalTimeTaken;
+const getTotalTimeCorrect = (state: State): number => state.totalTimeForCorrect;
+const getTotalTimeWrong = (state: State): number => state.totalTimeForWrong;
 
 export const selectHomeState: MemoizedSelector<
   object,
@@ -88,4 +90,20 @@ export const selectTotalTimeTaken: MemoizedSelector<
 > = createSelector(
   selectHomeState,
   getTotalTimeTaken
+);
+
+export const selectTotalTimeCorrect: MemoizedSelector<
+  object,
+  number
+> = createSelector(
+  selectHomeState,
+  getTotalTimeCorrect
+);
+
+export const selectTotalTimeWrong: MemoizedSelector<
+  object,
+  number
+> = createSelector(
+  selectHomeState,
+  getTotalTimeWrong
 );
