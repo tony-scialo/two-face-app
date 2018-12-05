@@ -8,7 +8,8 @@ export enum HomeActionTypes {
   GENERATE_RANDOM_SELECTS = '[HOME STORE] GENERATE_RANDOM_SELECTS',
   USER_IMAGE_SELECTION = '[HOME STORE] USER_IMAGE_SELECTION',
   GO_BACK_TO_SELECT_IMAGE = '[HOME STORE] GO_BACK_TO_SELECT_IMAGE',
-  GO_TO_SHOW_RESULTS = '[HOME STORE] GO_TO_SHOW_RESULTS'
+  GO_TO_SHOW_RESULTS = '[HOME STORE] GO_TO_SHOW_RESULTS',
+  HEADER_LOGO_SELECTED = '[HOME STORE] HEADER_LOGO_SELECTED'
 }
 
 export class TryItClick implements Action {
@@ -45,6 +46,10 @@ export class GoToShowResults implements Action {
   readonly type = HomeActionTypes.GO_TO_SHOW_RESULTS;
 }
 
+export class HeaderLogoSelected implements Action {
+  readonly type = HomeActionTypes.HEADER_LOGO_SELECTED;
+}
+
 export type HomeActions =
   | TryItClick
   | UserTimerStart
@@ -52,4 +57,5 @@ export type HomeActions =
   | SelectRandomImage
   | GenerateRandomSelects
   | UserImageSelection
-  | GoToShowResults;
+  | GoToShowResults
+  | HeaderLogoSelected;

@@ -39,4 +39,12 @@ export class HomeEffects {
       this.router.navigate(['showResults']);
     })
   );
+
+  @Effect({ dispatch: false })
+  headerLogoSelected = this.actions$.pipe(
+    ofType(HomeActionTypes.HEADER_LOGO_SELECTED),
+    tap(() => {
+      this.router.navigate(['home']);
+    })
+  );
 }
