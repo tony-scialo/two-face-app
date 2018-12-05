@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { UserImageSelect } from 'src/app/shared/model/user-image-select.model';
 
 export enum HomeActionTypes {
   TRY_IT_CLICK = '[HOME STORE] TRY_IT_CLICK',
@@ -35,7 +36,7 @@ export class GenerateRandomSelects implements Action {
 
 export class UserImageSelection implements Action {
   readonly type = HomeActionTypes.USER_IMAGE_SELECTION;
-  constructor(public payload: string) {}
+  constructor(public payload: UserImageSelect) {}
 }
 
 export class GoBackToSelectImage implements Action {

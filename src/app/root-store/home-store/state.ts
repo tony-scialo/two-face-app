@@ -10,6 +10,7 @@ export interface State {
   totalNumAllowedAttempts: number;
   numAttemps: number;
   numCorrect: number;
+  totalTimeTaken: number;
 }
 
 export const initialState = {
@@ -21,5 +22,6 @@ export const initialState = {
   selectImgList: [],
   totalNumAllowedAttempts: 2,
   numAttemps: 0,
-  numCorrect: 0
+  numCorrect: 0,
+  totalTimeTaken: 0
 };

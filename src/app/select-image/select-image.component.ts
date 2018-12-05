@@ -19,6 +19,8 @@ export class SelectImageComponent implements OnInit, OnDestroy {
   totalNumAllowedAttempts: number;
   totalNumAllowedAttemptsSub: Subscription;
 
+  userTimeStart: number;
+
   constructor(private store$: Store<RootStoreState.State>) {}
 
   ngOnInit() {
@@ -34,6 +36,8 @@ export class SelectImageComponent implements OnInit, OnDestroy {
     this.totalNumAllowedAttemptsSub = this.store$
       .select(HomeSelectors.selectTotalNumAllowedAttempts)
       .subscribe(tna => (this.totalNumAllowedAttempts = tna));
+
+    this.userTimeStart = new Date().getTime();
   }
 
   ngOnDestroy() {
@@ -43,7 +47,14 @@ export class SelectImageComponent implements OnInit, OnDestroy {
   }
 
   onImageClick(filename: string) {
-    this.store$.dispatch(new HomeActions.UserImageSelection(filename));
+    const userEndTime = new Date().getTime();
+
+    const userImageSelect = {
+      filename: filename,
+      userStartTime: userEndTime - this.userTimeStart
+    };
+
+    this.store$.dispatch(new HomeActions.UserImageSelection(userImageSelect));
 
     if (this.numAttempts !== this.totalNumAllowedAttempts) {
       this.store$.dispatch(new HomeActions.GoBackToSelectImage());

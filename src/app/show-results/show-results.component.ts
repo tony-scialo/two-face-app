@@ -9,30 +9,36 @@ import { RootStoreState, HomeSelectors } from '../root-store';
   styleUrls: ['./show-results.component.scss']
 })
 export class ShowResultsComponent implements OnInit, OnDestroy {
-  // numCorrect: number;
-  // numCorrectSub: Subscription;
+  numCorrect: number;
+  numCorrectSub: Subscription;
 
-  // numAllowedAttempts: number;
-  // numAllowedAttemptsSub: Subscription;
+  numAllowedAttempts: number;
+  numAllowedAttemptsSub: Subscription;
 
-  numCorrect = 1;
-  numAllowedAttempts = 3;
+  totalTimeTaken: number;
+  totalTimeTakenSub: Subscription;
 
   avgTimePerGuess = 2.45;
 
   constructor(private store$: Store<RootStoreState.State>) {}
 
   ngOnInit() {
-    // this.numCorrectSub = this.store$
-    //   .select(HomeSelectors.selectNumCorrect)
-    //   .subscribe(nc => (this.numCorrect = nc));
-    // this.numAllowedAttemptsSub = this.store$
-    //   .select(HomeSelectors.selectTotalNumAllowedAttempts)
-    //   .subscribe(na => (this.numAllowedAttempts = na));
+    this.numCorrectSub = this.store$
+      .select(HomeSelectors.selectNumCorrect)
+      .subscribe(nc => (this.numCorrect = nc));
+
+    this.numAllowedAttemptsSub = this.store$
+      .select(HomeSelectors.selectTotalNumAllowedAttempts)
+      .subscribe(na => (this.numAllowedAttempts = na));
+
+    this.totalTimeTakenSub = this.store$
+      .select(HomeSelectors.selectTotalTimeTaken)
+      .subscribe(ttt => (this.totalTimeTaken = ttt));
   }
 
   ngOnDestroy() {
-    // this.numCorrectSub.unsubscribe();
-    // this.numAllowedAttemptsSub.unsubscribe();
+    this.numCorrectSub.unsubscribe();
+    this.numAllowedAttemptsSub.unsubscribe();
+    this.totalTimeTakenSub.unsubscribe();
   }
 }

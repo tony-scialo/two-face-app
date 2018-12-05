@@ -9,7 +9,7 @@
         {{ numCorrect/numAllowedAttempts | percent: '0.1-1' }} Correct
       </div>
       <div class="average-time-wrapper">
-        {{ avgTimePerGuess | number: '0.1-2' }} seconds per attempt
+        {{ (totalTimeTaken / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per attempt
       </div>
     </div>
   </div>

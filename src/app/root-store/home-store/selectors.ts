@@ -14,6 +14,7 @@ const getNumAttempts = (state: State): number => state.numAttemps;
 const getTotalNumAllowedAttempts = (state: State): number =>
   state.totalNumAllowedAttempts;
 const getNumCorrect = (state: State): number => state.numCorrect;
+const getTotalTimeTaken = (state: State): number => state.totalTimeTaken;
 
 export const selectHomeState: MemoizedSelector<
   object,
@@ -79,4 +80,12 @@ export const selectNumCorrect: MemoizedSelector<
 > = createSelector(
   selectHomeState,
   getNumCorrect
+);
+
+export const selectTotalTimeTaken: MemoizedSelector<
+  object,
+  number
+> = createSelector(
+  selectHomeState,
+  getTotalTimeTaken
 );

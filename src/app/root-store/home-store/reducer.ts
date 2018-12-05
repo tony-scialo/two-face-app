@@ -1,3 +1,4 @@
+import { UserImageSelect } from 'src/app/shared/model/user-image-select.model';
 import { FaceImage } from './../../shared/model/face-image.model';
 import { initialState, State } from './state';
 import { HomeActionTypes, HomeActions } from './actions';
@@ -57,18 +58,19 @@ function generateRandomSelects(state: State): State {
   };
 }
 
-function userImageSelection(state: State, selectedImg: string): State {
+function userImageSelection(
+  state: State,
+  userImageSelect: UserImageSelect
+): State {
   let numCorrect = state.numCorrect;
-  if (selectedImg === state.randomImg) {
+  if (userImageSelect.filename === state.randomImg) {
     numCorrect++;
   }
-
-  const numAttempts = ++state.numAttemps;
-  console.log(numAttempts);
 
   return {
     ...state,
     numCorrect: numCorrect,
-    numAttemps: numAttempts
+    numAttemps: ++state.numAttemps,
+    totalTimeTaken: state.totalTimeTaken + userImageSelect.userStartTime
   };
 }
