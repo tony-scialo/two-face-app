@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RootStoreModule } from './root-store/root-store.module';
@@ -17,7 +18,13 @@ import { HeaderComponent } from './header/header.component';
 import { SelectImageComponent } from './select-image/select-image.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ShowImageComponent, HeaderComponent, SelectImageComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ShowImageComponent,
+    HeaderComponent,
+    SelectImageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,7 +33,8 @@ import { SelectImageComponent } from './select-image/select-image.component';
     RootStoreModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    environment.imports
   ],
   providers: [],
   bootstrap: [AppComponent]
