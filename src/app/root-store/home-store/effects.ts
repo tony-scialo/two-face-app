@@ -23,4 +23,13 @@ export class HomeEffects {
       this.router.navigate(['selectImage']);
     })
   );
+
+  @Effect({ dispatch: false })
+  backToSelectImg = this.actions$.pipe(
+    ofType(HomeActionTypes.GO_BACK_TO_SELECT_IMAGE),
+    tap(() => {
+      console.log('here');
+      this.router.navigate(['showImage']);
+    })
+  );
 }

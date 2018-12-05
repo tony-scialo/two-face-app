@@ -62,8 +62,13 @@ function userImageSelection(state: State, selectedImg: string): State {
   if (selectedImg === state.randomImg) {
     numCorrect++;
   }
+
+  const numAttempts = ++state.numAttemps;
+  console.log(numAttempts);
+
   return {
     ...state,
-    numCorrect: numCorrect
+    numCorrect: numCorrect,
+    numAttemps: numAttempts
   };
 }
