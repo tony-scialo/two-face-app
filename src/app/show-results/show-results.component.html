@@ -1,9 +1,9 @@
 <app-header></app-header>
 <div class="show-results-container">
   <div class="wrapper">
-    <!-- <div class="logo">
+    <div class="logo">
       <img src="../../assets/logos/shield.svg" alt="2 face logo">
-    </div> -->
+    </div>
     <div class="results-wrapper">
       <div class="number-correct-wrapper">
         <div class="card">
@@ -22,15 +22,50 @@
 
       </div>
       <div class="average-time-wrapper">
-        <!-- <div class="time">
-          {{ (totalTimeTaken / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per attempt
+        <div class="title">
+          Average Seconds per attempt
         </div>
-        <div class="time">
-          {{ (totalTimeCorrect / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per correct attempt
+        <div class="card-container">
+          <div class="card">
+            <div class="icon-container">
+              <fa-icon [icon]="faClock"></fa-icon>
+            </div>
+            <div class="content-container">
+              <div class="value">
+                {{ (totalTimeTaken / 1000) / numAllowedAttempts | number: '0.1-2' }}
+              </div>
+              <div class="label">
+                total
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="icon-container">
+              <fa-icon [icon]="faUserCheck"></fa-icon>
+            </div>
+            <div class="content-container">
+              <div class="value">
+                {{ (totalTimeCorrect / 1000) / numAllowedAttempts | number: '0.1-2' }}
+              </div>
+              <div class="label">
+                correct
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="icon-container">
+              <fa-icon [icon]="faTimes"></fa-icon>
+            </div>
+            <div class="content-container">
+              <div class="value">
+                {{ (totalTimeWrong / 1000) / numAllowedAttempts | number: '0.1-2' }}
+              </div>
+              <div class="label">
+                wrong
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="time">
-          {{ (totalTimeWrong / 1000) / numAllowedAttempts | number: '0.1-2' }} seconds per wrong attempt
-        </div> -->
       </div>
     </div>
   </div>

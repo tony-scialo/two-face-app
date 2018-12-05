@@ -3,6 +3,9 @@ import { Store } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RootStoreState, HomeSelectors } from '../root-store';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faUserTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUserClock } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-show-results',
@@ -11,6 +14,9 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 })
 export class ShowResultsComponent implements OnInit, OnDestroy {
   faCheck = faCheck;
+  faTimes = faUserTimes;
+  faClock = faUserClock;
+  faUserCheck = faUserCheck;
 
   numCorrect: number;
   numCorrectSub: Subscription;
