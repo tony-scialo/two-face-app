@@ -13,6 +13,8 @@ export function featureReducer(state = initialState, action: HomeActions) {
       return selectRandomImage(state);
     case HomeActionTypes.GENERATE_RANDOM_SELECTS:
       return generateRandomSelects(state);
+    case HomeActionTypes.USER_IMAGE_SELECTION:
+      return userImageSelection(state, action.payload);
     default:
       return state;
   }
@@ -52,5 +54,16 @@ function generateRandomSelects(state: State): State {
   return {
     ...state,
     selectImgList: list
+  };
+}
+
+function userImageSelection(state: State, selectedImg: string): State {
+  let numCorrect = state.numCorrect;
+  if (selectedImg === state.randomImg) {
+    numCorrect++;
+  }
+  return {
+    ...state,
+    numCorrect: numCorrect
   };
 }

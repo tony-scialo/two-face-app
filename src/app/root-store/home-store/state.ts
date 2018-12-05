@@ -7,6 +7,9 @@ export interface State {
   timerLength: number;
   numSelectImg: number;
   selectImgList: string[];
+  totalNumAllowedAttempts: number;
+  numAttemps: number;
+  numCorrect: number;
 }
 
 export const initialState = {
@@ -15,5 +18,8 @@ export const initialState = {
   filenames: FILENAMES,
   timerLength: 2000,
   numSelectImg: 9,
-  selectImgList: []
+  selectImgList: [],
+  totalNumAllowedAttempts: 5,
+  numAttemps: 0,
+  numCorrect: 0
 };

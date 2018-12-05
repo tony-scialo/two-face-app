@@ -27,6 +27,6 @@ export class SelectImageComponent implements OnInit, OnDestroy {
   }
 
   onImageClick(filename: string) {
-    console.log(filename);
+    this.store$.dispatch(new HomeActions.UserImageSelection(filename));
   }
 }
