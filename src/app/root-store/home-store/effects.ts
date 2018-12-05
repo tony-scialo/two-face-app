@@ -31,4 +31,12 @@ export class HomeEffects {
       this.router.navigate(['showImage']);
     })
   );
+
+  @Effect({ dispatch: false })
+  showResults = this.actions$.pipe(
+    ofType(HomeActionTypes.GO_BACK_TO_SELECT_IMAGE),
+    tap(() => {
+      this.router.navigate(['showResults']);
+    })
+  );
 }

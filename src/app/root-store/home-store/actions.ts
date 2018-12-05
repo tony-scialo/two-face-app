@@ -7,7 +7,8 @@ export enum HomeActionTypes {
   SELECT_RANDOM_IMAGE = '[HOME STORE] SELECT_RANDOM_IMAGE',
   GENERATE_RANDOM_SELECTS = '[HOME STORE] GENERATE_RANDOM_SELECTS',
   USER_IMAGE_SELECTION = '[HOME STORE] USER_IMAGE_SELECTION',
-  GO_BACK_TO_SELECT_IMAGE = '[HOME STORE] GO_BACK_TO_SELECT_IMAGE'
+  GO_BACK_TO_SELECT_IMAGE = '[HOME STORE] GO_BACK_TO_SELECT_IMAGE',
+  GO_TO_SHOW_RESULTS = '[HOME STORE] GO_TO_SHOW_RESULTS'
 }
 
 export class TryItClick implements Action {
@@ -40,10 +41,15 @@ export class GoBackToSelectImage implements Action {
   readonly type = HomeActionTypes.GO_BACK_TO_SELECT_IMAGE;
 }
 
+export class GoToShowResults implements Action {
+  readonly type = HomeActionTypes.GO_TO_SHOW_RESULTS;
+}
+
 export type HomeActions =
   | TryItClick
   | UserTimerStart
   | UserTimerEnd
   | SelectRandomImage
   | GenerateRandomSelects
-  | UserImageSelection;
+  | UserImageSelection
+  | GoToShowResults;

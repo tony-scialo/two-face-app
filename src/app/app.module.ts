@@ -16,6 +16,7 @@ import {
 import { ShowImageComponent } from './show-image/show-image.component';
 import { HeaderComponent } from './header/header.component';
 import { SelectImageComponent } from './select-image/select-image.component';
+import { ShowResultsComponent } from './show-results/show-results.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SelectImageComponent } from './select-image/select-image.component';
     HomeComponent,
     ShowImageComponent,
     HeaderComponent,
-    SelectImageComponent
+    SelectImageComponent,
+    ShowResultsComponent
   ],
   imports: [
     BrowserModule,
